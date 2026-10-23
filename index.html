@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Patwardhan Pharma — Letterhead & NOC</title>
+<style>
+@page{size:A4;margin:0}*{box-sizing:border-box}body{margin:0;background:#eee;color:#172a3c;font-family:Arial,sans-serif}
+.toolbar{max-width:1100px;margin:18px auto;padding:16px;background:#fff;border-radius:10px;box-shadow:0 2px 12px #0001}
+.toolbar h1{margin:0 0 6px;font-size:22px}.toolbar p{margin:0 0 14px;color:#555;font-size:14px}
+.fields{display:grid;grid-template-columns:repeat(4,minmax(140px,1fr));gap:12px}.field label{display:block;font-size:12px;font-weight:bold;margin-bottom:6px}
+.field input{width:100%;padding:10px;border:1px solid #c8cdd2;border-radius:5px;font:14px Arial}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}button{border:0;border-radius:6px;padding:11px 16px;cursor:pointer;font-weight:bold;font-size:14px;background:#8d3c32;color:white}
+button.secondary{background:#26394b}button:disabled{opacity:.6}.hint{font-size:12px;color:#666;line-height:1.5;margin-top:10px}
+.page{width:210mm;height:297mm;margin:0 auto 24px;padding:15mm 14mm;background:white;overflow:hidden;box-shadow:0 2px 12px #0002;font-family:"Times New Roman",serif}
+.header{display:grid;grid-template-columns:64% 36%;align-items:start;min-height:35mm;gap:2mm}
+.company-name{color:#a7473e;font-size:20pt;line-height:1.12;font-weight:bold;letter-spacing:.2px;white-space:nowrap;margin:0 0 4px}
+.address{font-size:12.5pt;line-height:1.48;margin:0}.contact{text-align:right;font-size:11.5pt;line-height:1.5;padding-top:1mm}
+.contact-row{white-space:nowrap;margin-bottom:8px}.phone-icon{font:17pt Arial;color:#172a3c;vertical-align:middle;margin-right:3px}
+.email{color:#a7473e;font-size:11pt;overflow-wrap:anywhere}.license-box{display:inline-block;border:1.5px solid #a7473e;border-radius:12px;padding:2px 9px 4px;margin-top:4px;text-align:center;line-height:1.28;font-size:10pt;white-space:nowrap}
+.license-box .gst{font-size:12pt;font-weight:bold}.divider{border-top:1.2px solid #a7473e;margin-top:2mm}
+.document-meta{display:grid;grid-template-columns:1fr 1fr;margin-top:11mm;font:9pt Arial;color:#222}.date{text-align:right}
+.noc-title{text-align:center;margin:19mm 0 15mm;font: bold 13pt Arial;color:#111}
+.noc-body{margin:0 5mm;font:10.5pt/1.8 Arial;color:#111;text-align:justify}
+.signature{margin:28mm 5mm 0;font:10pt Arial;color:#111}.signline{margin-top:18mm}
+.letterhead-only .document-meta,.letterhead-only .noc-title,.letterhead-only .noc-body,.letterhead-only .signature{display:none}
+@media(max-width:800px){.fields{grid-template-columns:repeat(2,minmax(130px,1fr))}}
+@media print{body{background:white}.toolbar{display:none!important}.page{margin:0;box-shadow:none}}
+</style></head><body>
+<section class="toolbar"><h1>Patwardhan Pharma Distributors</h1>
+<p>Download a blank letterhead PDF, or fill in the editable fields to create a No Objection Certificate (NOC).</p>
+<div class="fields">
+<div class="field"><label for="refNo">Reference number</label><input id="refNo" value="0144"></div>
+<div class="field"><label for="companyName">Company name</label><input id="companyName" value="SHREE DHOOTAPARESHWAR PVT LTD (VIKRAM DIVISION)"></div>
+<div class="field"><label for="repName">Representative name</label><input id="repName" value="DEEPAK BHANDARI"></div>
+<div class="field"><label for="nocDate">Date</label><input id="nocDate" type="date"></div>
+</div><div class="actions">
+<button id="blankBtn" class="secondary" type="button">Download Blank Letterhead PDF</button>
+<button id="nocBtn" type="button">Download NOC PDF</button>
+</div><div class="hint">PDFs download directly when the PDF libraries load. If a download is blocked, allow downloads for this page and try again. Date defaults to today and remains editable.</div></section>
+<main id="letterPage" class="page">
+<header class="header"><section><h2 class="company-name">PATWARDHAN PHARMA DISTRIBUTORS</h2>
+<p class="address">77B, “KEDAR”, Bauji Nagar<br><strong>SIRSI (U.K.) 581402</strong> Karnataka</p></section>
+<section class="contact"><div class="contact-row"><span class="phone-icon">☎</span> Cell : <strong>7019829906</strong></div>
+<div class="contact-row email">Email : pharmapatwardhan@gmail.com</div>
+<div class="license-box"><div class="gst">GST No : 29AAZFP8643B1ZL</div><div><strong>DL. No.</strong> KA/KW1/20B/292759</div><div>KA/KW1/21B/292760</div></div></section></header>
+<div class="divider"></div>
+<section class="document-meta"><div>REF NO-<span id="previewRef">0144</span></div><div class="date">DATE-<span id="previewDate"></span></div></section>
+<h3 class="noc-title">NO OBJECTION CERTIFICATE</h3>
+<p class="noc-body">This is to certify that “Mr. <span id="previewRep">DEEPAK BHANDARI</span>” has worked as MR of “<span id="previewCompany">SHREE DHOOTAPARESHWAR PVT LTD (VIKRAM DIVISION)</span>”. He has informed us that he has discontinued his services. Hereby, we inform that he has NO DUES to the PATWARDHAN PHARMA.</p>
+<div class="signature"><div>For PATWARDHAN PHARMA DISTRIBUTORS</div><div class="signline">Authorised Signatory</div></div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const dateInput=document.getElementById('nocDate'),now=new Date();
+dateInput.value=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
+const refInput=document.getElementById('refNo'),companyInput=document.getElementById('companyName'),repInput=document.getElementById('repName'),page=document.getElementById('letterPage');
+function formatDate(v){if(!v)return '';const [y,m,d]=v.split('-');return `${d}-${m}-${y}`}
+function updatePreview(){document.getElementById('previewRef').textContent=refInput.value.trim();document.getElementById('previewCompany').textContent=companyInput.value.trim();document.getElementById('previewRep').textContent=repInput.value.trim();document.getElementById('previewDate').textContent=formatDate(dateInput.value)}
+[refInput,companyInput,repInput,dateInput].forEach(e=>{e.addEventListener('input',updatePreview);e.addEventListener('change',updatePreview)});updatePreview();
+async function downloadPdf(blank){const btn=document.getElementById(blank?'blankBtn':'nocBtn'),old=btn.textContent;btn.disabled=true;btn.textContent='Preparing PDF…';
+try{if(!window.html2canvas||!window.jspdf?.jsPDF)throw Error('PDF tools did not load. Check your internet connection and refresh this page.');updatePreview();if(blank)page.classList.add('letterhead-only');await document.fonts.ready;
+const canvas=await html2canvas(page,{scale:2,backgroundColor:'#fff',useCORS:true,width:page.scrollWidth,height:page.scrollHeight,windowWidth:Math.max(document.documentElement.clientWidth,page.scrollWidth)});
+const {jsPDF}=window.jspdf,pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4',compress:true});pdf.addImage(canvas.toDataURL('image/jpeg',.96),'JPEG',0,0,210,297,undefined,'FAST');
+const slug=repInput.value.trim().replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'')||'document';pdf.save(blank?'patwardhan-pharma-blank-letterhead.pdf':'patwardhan-pharma-noc-'+slug+'.pdf');
+}catch(e){alert(e.message||'Could not create PDF. Please try again.')}finally{page.classList.remove('letterhead-only');btn.disabled=false;btn.textContent=old}}
+document.getElementById('blankBtn').addEventListener('click',()=>downloadPdf(true));document.getElementById('nocBtn').addEventListener('click',()=>downloadPdf(false));
+</script></body></html>
